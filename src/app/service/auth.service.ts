@@ -3,7 +3,7 @@ import axios from "axios";
 export class AuthService {
   static async login(username: string, password: string, email: string) {
     try {
-      return await axios.post("http://localhost:3000/api/v1/login", {
+      return await axios.post("https://chat-back-production-06c2.up.railway.app/api/v1/login", {
         username,
         password,
         email,
@@ -13,7 +13,7 @@ export class AuthService {
     }
   }
   static async getUser() {
-    return await axios.get("http://localhost:3000/user", {
+    return await axios.get("https://chat-back-production-06c2.up.railway.app/user", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access")}`,
       },
@@ -21,7 +21,7 @@ export class AuthService {
   }
   static async register(username: string, password: string, email: string) {
     try {
-      return await axios.post("http://localhost:3000/api/v1/register", {
+      return await axios.post("https://chat-back-production-06c2.up.railway.app/api/v1/register", {
         username,
         password,
         email,
